@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "_Header";
+}
+
+<div class="top-navbar">
+    <div class="top-navbar-left">
+        <a href="tel:+37360018337" class="phone-link">
+            <img src="@Url.Content("~/Content/Images/telephone.png")" alt="Phone" class="phone-icon" />
+            <span class="phone-number">+373 60 018 337</span>
+        </a>
+    </div>
+    <div class="top-navbar-right">
+        <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="@Url.Action("SignIn","Home")" class="login-btn">Logare</a>
+    </div>
+</div>
+<hr class="navbar-divider" />
+<nav class="navbar-menu">
+    <ul class="nav_links">
+        <li><a href="@Url.Action("Index","Home")">Acasa</a></li>
+        <li><a href="@Url.Action("Services","Home")">Servicii</a></li>
+        <li>
+            <a href="@Url.Action("Index", "Home")">
+                <img class="logo-navbar" src="@Url.Content("~/Content/Images/Logo.png")" alt="Logo_navbar" />
+            </a>
+        </li>
+        <li><a href="@Url.Action("AboutUs","Home")">Despre noi</a></li>
+        <li><a href="@Url.Action("Contacts","Home")">Contacte</a></li>
+    </ul>
+</nav>
+
+
