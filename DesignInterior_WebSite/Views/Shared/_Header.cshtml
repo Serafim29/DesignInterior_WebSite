@@ -2,22 +2,26 @@
     ViewBag.Title = "_Header";
 }
 
-<div class="top-navbar">
+
+<div class="top-navbar desktop-navbar tablet-navbar">
     <div class="top-navbar-left">
         <a href="tel:+37360018337" class="phone-link">
             <img src="@Url.Content("~/Content/Images/telephone.png")" alt="Phone" class="phone-icon" />
             <span class="phone-number">+373 60 018 337</span>
         </a>
     </div>
+    <div class="top-navbar-spacer"></div>
     <div class="top-navbar-right">
-        <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-        <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/mg_interiordesigner/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="@("https://www.tiktok.com/@mihai_mg_design")" target="_blank" class="social-icon">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com/StudiodesigninteriorMG" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         <a href="@Url.Action("SignIn","Home")" class="login-btn">Logare</a>
     </div>
 </div>
-<hr class="navbar-divider" />
-<nav class="navbar-menu">
+<hr class="navbar-divider desktop-navbar tablet-navbar" />
+<nav class="navbar-menu desktop-navbar">
     <ul class="nav_links">
         <li><a href="@Url.Action("Index","Home")">Acasa</a></li>
         <li><a href="@Url.Action("Services","Home")">Servicii</a></li>
@@ -30,5 +34,90 @@
         <li><a href="@Url.Action("Contacts","Home")">Contacte</a></li>
     </ul>
 </nav>
+
+
+<header class="responsive-navbar mobile-navbar">
+    <div class="navbar-row">
+        <a href="@Url.Action("Index", "Home")" class="logo-link">
+            <img class="logo-navbar" src="@Url.Content("~/Content/Images/Logo.png")" alt="Logo_navbar" />
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Deschide meniul">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="@Url.Action("Index","Home")">Acasa</a></li>
+            <li><a href="@Url.Action("Services","Home")">Servicii</a></li>
+            <li><a href="@Url.Action("AboutUs","Home")">Despre noi</a></li>
+            <li><a href="@Url.Action("Contacts","Home")">Contacte</a></li>
+        </ul>
+        <div class="mobile-contact">
+            <a href="tel:+373 60 018 337" class="phone-link">
+                <img src="@Url.Content("~/Content/Images/telephone.png")" alt="Phone" class="phone-icon" />
+                <span class="phone-number">+373 60 018 337</span>
+            </a>
+        </div>
+        <div class="mobile-socials">
+            <a href="https://www.instagram.com/mg_interiordesigner/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="@("https://www.tiktok.com/@mihai_mg_design")" target="_blank" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.facebook.com/StudiodesigninteriorMG" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </nav>
+</header>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('hamburgerBtn');
+    var menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', function() {
+        menu.classList.toggle('open');
+        btn.classList.toggle('open');
+    });
+});
+</script>
+
+
+<!-- Elimină orice alt div .top-navbar pentru desktop sau tabletă -->
+
+<!-- Container pentru imaginea de fundal, cu spațiu între <hr> și imagine -->
+
+<nav class="navbar-menu tablet-navbar">
+    <ul class="nav_links">
+        <li><a href="@Url.Action("Index","Home")">Acasa</a></li>
+        <li><a href="@Url.Action("Services","Home")">Servicii</a></li>
+        <li>
+            <a href="@Url.Action("Index", "Home")">
+                <img class="logo-navbar" src="@Url.Content("~/Content/Images/Logo.png")" alt="Logo_navbar" />
+            </a>
+        </li>
+        <li><a href="@Url.Action("AboutUs","Home")">Despre noi</a></li>
+        <li><a href="@Url.Action("Contacts","Home")">Contacte</a></li>
+    </ul>
+</nav>
+
+<div class="image-container">
+    <img class="header-image" src="@Url.Content("~/Content/Images/3%20(1).jpg")" alt="Background">
+</div>
+<script>
+function showCorrectNavbar() {
+    var w = window.innerWidth;
+    document.querySelectorAll('.desktop-navbar, .tablet-navbar, .mobile-navbar').forEach(function(el) {
+        el.style.display = 'none';
+    });
+    if (w <= 900) {
+        document.querySelectorAll('.mobile-navbar').forEach(function(el) { el.style.display = 'block'; });
+    } else if (w <= 1200) {
+        document.querySelectorAll('.tablet-navbar').forEach(function(el) { el.style.display = 'block'; });
+    } else {
+        document.querySelectorAll('.desktop-navbar').forEach(function(el) { el.style.display = 'block'; });
+    }
+}
+window.addEventListener('DOMContentLoaded', showCorrectNavbar);
+window.addEventListener('resize', showCorrectNavbar);
+</script>
 
 
