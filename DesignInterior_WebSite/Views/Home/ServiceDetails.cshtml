@@ -1,0 +1,57 @@
+@{
+    Response.ContentEncoding = System.Text.Encoding.UTF8;
+    Response.Charset = "UTF-8";
+    ViewBag.Title = "Detalii Pachet";
+    var id = ViewBag.PackageId as int? ?? 0;
+    string titlu = "";
+    string[] include = null;
+    string[] exclude = null;
+    switch (id)
+    {
+        case 1:
+            titlu = "Express";
+            include = new[] { "Deplasarea specialistului la obiect.", "Masurarea obiectului existent.", "Consilierea specialistului.", "Dezvoltarea conceptului.", "Zonificarea spațiului în 2D cu amplasarea mobilierului.","Plane tehnice 2D (releveu, demontare pereți, montare pereți, după replanificare, amplasare mobilierului cu dimensiuni, pardoseli, tavane, dezaxare corpuri de iluminat, prize și întrerupătoare, pardoseli calde, instalații sanitare)", "Sfaturi pentru organizare cu imagini exemple, și lista materialelor, mobilierului necesar pentru finisare." };
+            exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării" };
+            break;
+        case 2:
+            titlu = "Econom";
+            include = new[] { "Planuri tehnice", "Imagini 3D fotorealiste", "Moodboard", "Contract juridic", "Până la 2 modificări de proiect" };
+            exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării" };
+            break;
+        case 3:
+            titlu = "Standart";
+            include = new[] { "Planuri tehnice", "Imagini 3D fotorealiste", "Moodboard", "Contract juridic", "Până la 3 modificări de proiect" };
+            exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării" };
+            break;
+        case 4:
+            titlu = "Exclusive";
+            include = new[] { "Planuri tehnice", "Imagini 3D fotorealiste", "Moodboard", "Contract juridic", "Modificări nelimitate de proiect", "Consultanță premium" };
+            exclude = new[] { "Lucrări de reparație" };
+            break;
+        default:
+            titlu = "Pachet inexistent";
+            include = new[] { "-" };
+            exclude = new[] { "-" };
+            break;
+    }
+} @Html.Partial("_Header")
+<div class="service-details-card">
+    <div class="service-details-back-row">
+        <a href="@Url.Action("Services", "Home")#packages-section" class="back-to-services"><img src="~/Content/Images/back-button.png" /></a>
+    </div>
+    <div class="service-details-title">@titlu</div>
+    <ul class="service-details-list">
+        @foreach (var item in include)
+        {
+            <li class="service-details-include"><span class="checkmark">&#10003;</span> @item</li>
+        }
+    </ul>
+    <div class="service-details-exclude-title">Pachetul nu include:</div>
+    <ul class="service-details-list service-details-list-exclude">
+        @foreach (var item in exclude)
+        {
+            <li class="service-details-exclude"><span class="xmark">&#10005;</span> @item</li>
+        }
+    </ul>
+    <a href="@Url.Action("Contact", "Home")" class="service-details-choose-btn">Alege</a>
+</div> 

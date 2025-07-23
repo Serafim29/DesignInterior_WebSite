@@ -33,5 +33,10 @@ namespace DesignInterior_WebSite.Controllers
         {
             return View();
         }
+        public ActionResult ServiceDetails(int id)
+        {
+            ViewBag.PackageId = id;
+            return View();
+        }
     }
 }
