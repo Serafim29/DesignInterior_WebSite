@@ -414,7 +414,6 @@ ul.nav_links {
     height: auto;
     margin: 0px;
     border: none;
-    border-radius: 0;
     box-shadow: none;
     background: none;
     display: block;
@@ -490,6 +489,135 @@ header {
 .overlay-text h1 {
     font-size: 50px;
     line-height: 1.2;
+}
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.index-image {
+    width: 100%;
+    display: block;
+}
+
+.image-container-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.general-info {
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.index-image {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    border-radius: 50px;
+    z-index: 1;
+}
+
+
+.contact-btn {
+    margin-top: 1.5rem;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+    .contact-btn:hover {
+        background: #fff;
+        color: #222;
+    }
+
+
+.image-container-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.general-info {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    pointer-events: auto;
+    box-sizing: border-box;
+    width: 80vw;
+    max-width: 350px;
+    max-height: 70vw;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 400px) {
+    .general-info {
+        width: 95vw;
+        max-width: 95vw;
+        min-width: unset;
+        padding: 0.5rem 0.3rem;
+        font-size: 0.95rem;
+        max-height: 60vw;
+        overflow-y: auto;
+        border-radius: 10px;
+    }
+
+        .general-info h1 {
+            font-size: 1.2rem;
+        }
+
+    .contact-btn {
+        font-size: 1rem;
+        padding: 0.3rem 1rem;
+    }
 }
 
 @keyframes slideUp {
@@ -936,7 +1064,6 @@ header {
     box-shadow: 0 2px 8px 0 rgba(224,169,109,0.08);
 }
 
-/* Dinamic */
 
 @media (max-width: 1023px) {
     .packages-grid {
@@ -988,6 +1115,7 @@ header {
     }
 }
 
+
 @media (max-width: 767px) {
     .desktop-navbar {
         display: none !important;
@@ -1036,7 +1164,7 @@ header {
 
             .mobile-nav-links li a {
                 color: #fff;
-                font-size: 25px;
+                font-size: 2.5rem;
                 font-weight: bold;
                 text-decoration: none;
                 transition: color 0.2s, border-bottom 0.2s;
@@ -1173,7 +1301,11 @@ header {
         display: block;
         margin: 0 auto;
     }
-
+    .general-info {
+        max-width: 80vw;
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+    }
     .services-image {
         border-radius: 16px;
     }
@@ -1258,6 +1390,14 @@ header {
         display: block;
         margin: 0 auto;
     }
+
+    .general-info {
+        width: 60vw;
+        max-width: 600px;
+        max-height: 60vw;
+        padding: 2.5rem 2rem;
+    }
+
     .services-images-container {
         padding: 0;
         width: 100vw;
@@ -1278,31 +1418,38 @@ header {
     .mobile-navbar, .responsive-navbar.mobile-navbar {
         display: none !important;
     }
+
     .tablet-navbar {
         display: none !important;
     }
+
     .desktop-navbar {
         display: block !important;
         max-width: 3376px;
     }
+
     .tablet-navbar .logo-navbar {
         height: 180px;
         max-width: 100px;
         margin: -10px 0;
     }
+
     .top-navbar-spacer {
         margin-left: 87%;
     }
+
     .top-navbar-left {
         text-align: left;
         margin-left: 25px;
         margin-top: 50px;
     }
+
     .top-navbar-right {
         text-align: right;
         margin-right: 25px;
-        margin-bottom:25px;
+        margin-bottom: 25px;
     }
+
     .top-navbar {
         margin: 5px;
     }
@@ -1314,6 +1461,27 @@ header {
         margin-right: 50px;
         display: block;
     }
+
+
+    .general-info {
+        width: 55vw;
+        max-width: 900px;
+        min-width: 500px;
+        max-height: 40vh;
+        padding: 3rem 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        text-align: left;
+    }
+
+        .general-info h1, .general-info p, .general-info .contact-btn {
+            flex: 1 1 0;
+        }
+
+
     .services-images-container {
         padding: 0;
         width: 100vw;
@@ -1328,6 +1496,7 @@ header {
         max-height: 70vh;
         border-radius: 0;
     }
+
     .services-image {
         border-radius: 24px;
     }
@@ -1341,4 +1510,5 @@ header {
         width: 80%;
     }
 }
+
 
