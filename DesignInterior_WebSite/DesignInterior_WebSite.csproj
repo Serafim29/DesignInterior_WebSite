@@ -453,8 +453,21 @@
   <ItemGroup>
     <Content Include="Content\Images\3 %281%29.jpg" />
     <Content Include="Content\Images\3.jpg" />
+    <Content Include="Content\Images\3d-modeling.png" />
     <Content Include="Content\Images\6.jpg" />
+    <Content Include="Content\Images\back-button.png" />
+    <Content Include="Content\Images\business-and-finance.png" />
+    <Content Include="Content\Images\concept.png" />
+    <Content Include="Content\Images\cube.png" />
+    <Content Include="Content\Images\euro-currency-symbol.png" />
+    <Content Include="Content\Images\euro.png" />
+    <Content Include="Content\Images\handshake.png" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\plan.png" />
+    <Content Include="Content\Images\plus.png" />
+    <Content Include="Content\Images\project.png" />
+    <Content Include="Content\Images\speed.png" />
+    <Content Include="Content\Images\talk.png" />
     <Content Include="Content\Images\telephone.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
@@ -480,6 +493,7 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
     <Content Include="Views\Home\SignIn.cshtml" />
+    <Content Include="Views\Home\ServiceDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

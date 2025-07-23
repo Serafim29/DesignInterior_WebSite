@@ -4,15 +4,103 @@
 }
 @Html.Partial("_Header")
 
-<div class="services-background-content">
-    <div class="services-images-container">
-        <img class="services-image" src="~/Content/Images/6.jpg" alt="Background">
-        <div class="overlay">
-            <div class="overlay-text">
-                <h1>Servicii</h1>
-                <p>Îți oferim pachete flexibile de design interior, adaptate nevoilor tale  de la consultanță rapidă, până la amenajări complete. </p>
+    <div class="services-background-content">
+        <div class="services-images-container">
+            <img class="services-image" src="~/Content/Images/6.jpg" alt="Background">
+            <div class="overlay">
+                <div class="overlay-text">
+                    <h1>Servicii</h1>
+                    <p>Îți oferim pachete flexibile de design interior, adaptate nevoilor tale  de la consultanță rapidă, până la amenajări complete. </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="packages-section" id="packages-section">
+        <h2 class="packages-title">Pachete</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-icon">
+                    <img src="~/Content/Images/speed.png" alt="Express-package" width="48" height="48" />
+                </div>
+                <div class="package-name">Express</div>
+                <div class="package-desc">Pentru clienți care au nevoie de un concept rapid și eficient, fără detalii complexe.</div>
+                <a href="@Url.Action("ServiceDetails", "Home", new { id = 1 })" class="package-btn">Despre</a>
+            </div>
+            <div class="package-card">
+                <div class="package-icon">
+                    <img src="~/Content/Images/business-and-finance.png" alt="Econom-package" width="48" height="48" />
+                </div>
+                <div class="package-name">Econom</div>
+                <div class="package-desc">Pentru cei care vor un plan complet 2D și îndrumare de bază, cu un cost redus.</div>
+                <a href="@Url.Action("ServiceDetails", "Home", new { id = 2 })" class="package-btn">Despre</a>
+            </div>
+            <div class="package-card">
+                <div class="package-icon">
+                    <img src="~/Content/Images/handshake.png" alt="Standart-package" width="48" height="48" />
+                </div>
+                <div class="package-name">Standart</div>
+                <div class="package-desc">Un pachet echilibrat care include atât partea de creație, cât și suport tehnic și vizualizări 3D.</div>
+                <a href="@Url.Action("ServiceDetails", "Home", new { id = 3 })" class="package-btn">Despre</a>
+            </div>
+            <div class="package-card">
+                <div class="package-icon">
+                    <img src="~/Content/Images/euro.png" alt="Exclusive-package" width="48" height="48" />
+                </div>
+                <div class="package-name">Exclusive</div>
+                <div class="package-desc">Pachetul complet, care oferă asistență premium, vizualizări avansate, listă de furnizori și supraveghere a execuției.</div>
+                <a href="@Url.Action("ServiceDetails", "Home", new { id = 4 })" class="package-btn">Despre</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="process-section" style="background: url('@Url.Content("~/Content/Images/3.jpg")') no-repeat center center; background-size: cover;">
+        <div class="process-image-side">
+        </div>
+        <div class="process-content-side">
+            <h2 class="process-title">Procesul unui proiect!</h2>
+            <div class="process-steps-row">
+                <div class="process-step-card">
+                    <div class="process-step-icon">
+                        <img src="~/Content/Images/talk.png" alt="Contact" width="50" height="50" />
+                    </div>
+                    <div class="process-step-title">1.Consultanță + luarea dimensiunilor:</div>
+                    <div class="process-step-desc"> Deplasarea la obiect, consultanță, achitarea cerințelor solicitatea de client, prelevarea dimensiunilor , semnarea contractului.</div>
+                    <div class="process-step-arrow">&gt;</div>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-step-icon">
+                        <img src="~/Content/Images/concept.png" alt="Concept" width="50" height="50" />
+                    </div>
+                    <div class="process-step-title">2.Replanificarea + amplasarea mobilieruilui 2D:</div>
+                    <div class="process-step-desc">Prezentarea varinatelor de replanificare și amplasare de mobilier efectuate conform cerințelor solicitate și posibilitații planimetriei existente.</div>
+                    <div class="process-step-arrow">&gt;</div>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-step-icon">
+                        <img src="~/Content/Images/cube.png" alt="Proiectare" width="50" height="50" />
+                    </div>
+                    <div class="process-step-title">3.Prezentarea conceptului 3D:</div>
+                    <div class="process-step-desc">Prezentarea conceptului 3D (rendere foto-realistice) executate după solicitarile clientului + conceptul implimentat de designer.</div>
+                    <div class="process-step-arrow">&gt;</div>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-step-icon">
+                        <img src="~/Content/Images/3d-modeling.png" alt="Implementare" width="50" height="50" />
+                    </div>
+                    <div class="process-step-title">4.Prezentarea schimabrilor solicitate 3D:</div>
+                    <div class="process-step-desc">Prezentarea schimbărilor 3D solicitate de client în urma previzualizării conceptului prezentat în etapa precedentă.</div>
+                    <div class="process-step-arrow">&gt;</div>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-step-icon">
+                        <img src="~/Content/Images/project.png" alt="Finalizare" width="50" height="50" />
+                    </div>
+                    <div class="process-step-title">5.Prezentarea proiectului final:</div>
+                    <div class="process-step-desc">Prezentarea proiectului final, cu elementele caracteristice pachetului solicitat de client în etapa inițială.</div>
+                    <div class="process-step-arrow">&gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
