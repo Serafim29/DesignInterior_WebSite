@@ -455,10 +455,12 @@
     <Content Include="Content\Images\3.jpg" />
     <Content Include="Content\Images\3d-modeling.png" />
     <Content Include="Content\Images\6.jpg" />
+    <Content Include="Content\Images\advertising.png" />
     <Content Include="Content\Images\back-button.png" />
     <Content Include="Content\Images\business-and-finance.png" />
     <Content Include="Content\Images\concept.png" />
     <Content Include="Content\Images\cube.png" />
+    <Content Include="Content\Images\email.png" />
     <Content Include="Content\Images\euro-currency-symbol.png" />
     <Content Include="Content\Images\euro.png" />
     <Content Include="Content\Images\handshake.png" />
