@@ -10,23 +10,33 @@
     {
         case 1:
             titlu = "Express";
-            include = new[] { "Deplasarea specialistului la obiect.", "Masurarea obiectului existent.", "Consilierea specialistului.", "Dezvoltarea conceptului.", "Zonificarea spațiului în 2D cu amplasarea mobilierului.","Plane tehnice 2D (releveu, demontare pereți, montare pereți, după replanificare, amplasare mobilierului cu dimensiuni, pardoseli, tavane, dezaxare corpuri de iluminat, prize și întrerupătoare, pardoseli calde, instalații sanitare)", "Sfaturi pentru organizare cu imagini exemple, și lista materialelor, mobilierului necesar pentru finisare." };
-            exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării" };
+            include = new[] { "Deplasarea specialistului la obiect.", "Masurarea obiectului existent.", "Consilierea specialistului.", 
+                "Dezvoltarea conceptului.", "Zonificarea spațiului în 2D cu amplasarea mobilierului.",
+                "Plane tehnice 2D (releveu, demontare pereți, montare pereți, după replanificare, amplasare mobilierului cu dimensiuni, pardoseli, tavane, dezaxare corpuri de iluminat, prize și întrerupătoare, pardoseli calde, instalații sanitare).", 
+                "Sfaturi pentru organizare cu imagini exemple, și lista materialelor, mobilierului necesar pentru finisare." };
+            exclude = new[] { "Lucrări de reparație.", "Monitorizarea implementării." };
             break;
         case 2:
             titlu = "Econom";
-            include = new[] { "Planuri tehnice", "Imagini 3D fotorealiste", "Moodboard", "Contract juridic", "Până la 2 modificări de proiect" };
-            exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării" };
+            include = new[] { "Deplasarea specialistului la obiect.", "Masurarea obiectului existent.", "Consilierea specialistului.", 
+                "Zonificarea spațiului în 2D cu amplasarea mobilierului.", "Plane tehnice 2D (releveu, demontare pereți, montare pereți, după replanificare, amplasare mobilierului cu dimensiuni, pardoseli, tavane, dezaxare corpuri de iluminat, prize și întrerupătoare, pardoseli calde, instalații sanitare, desfășurată băi.)" };
+            exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării." };
             break;
         case 3:
             titlu = "Standart";
-            include = new[] { "Planuri tehnice", "Imagini 3D fotorealiste", "Moodboard", "Contract juridic", "Până la 3 modificări de proiect" };
+            include = new[] { "Deplasarea specialistului la obiect.", "Masurarea obiectului existent.", "Consilierea specialistului." ,
+                "Dezvoltarea conceptului.", "Zonificarea spațiului în 2D cu amplasarea mobilierului.",
+                "Plane tehnice 2D (releveu, demontare pereți, montare pereți, după replanificare, amplasare mobilierului cu dimensiuni, pardoseli, tavane, dezaxare corpuri de iluminat, prize și întrerupătoare, pardoseli calde, instalații sanitare, secțiuni și detalierea mobilierului, desfășurată băi.).", 
+                "Vizualizare 3D.", "Borderoul de materiale și lista furnizorilor.", "1 deplasare la șantier." };
             exclude = new[] { "Lucrări de reparație", "Monitorizarea implementării" };
             break;
         case 4:
             titlu = "Exclusive";
-            include = new[] { "Planuri tehnice", "Imagini 3D fotorealiste", "Moodboard", "Contract juridic", "Modificări nelimitate de proiect", "Consultanță premium" };
-            exclude = new[] { "Lucrări de reparație" };
+            include = new[] { "Deplasarea specialistului la obiect.", "Masurarea obiectului existent.", "Consilierea specialistului.", "Dezvoltarea conceptului.", 
+                "Zonificarea spațiului în 2D cu amplasarea mobilierului.", "Plane tehnice 2D (releveu, demontare pereți, montare pereți, după replanificare, amplasare mobilierului cu dimensiuni, pardoseli, tavane, dezaxare corpuri de iluminat, prize și întrerupătoare, pardoseli calde, instalații sanitare, secțiuni și detalierea mobilierului, desfășurată băi.).", 
+                "Vizualizare 3D + tur virtual.", "Borderoul de materiale și lista furnizorilor.", "Supravegherea execuției lucrărilor.", 
+                "Deplasarea împreună cu clientul la magazine, companii de mobilier pentru consultanță și suport în alegerea materialelor și produselor." };
+            exclude = new[] { "Lucrări de reparație.", "Monitorizarea implementării." };
             break;
         default:
             titlu = "Pachet inexistent";
@@ -53,5 +63,5 @@
             <li class="service-details-exclude"><span class="xmark">&#10005;</span> @item</li>
         }
     </ul>
-    <a href="@Url.Action("Contact", "Home")" class="service-details-choose-btn">Alege</a>
+    <a href="@Url.Action("Contacts", "Home")" class="service-details-choose-btn">Alege</a>
 </div> 

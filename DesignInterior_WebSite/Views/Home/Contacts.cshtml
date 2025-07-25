@@ -9,7 +9,7 @@
     <div class="contacts-hero-overlay"></div>
     <h1 class="contacts-hero-title">Contacte</h1>
     <div class="contacts-breadcrumb">
-        <a href="@Url.Action("Index","Home")">Acasa</a> /
+        <a href="@Url.Action("Index","Home")">Acasă</a> /
         <a href="@Url.Action("Contacts","Home")">Contacte</a>
     </div>
 </div>
@@ -35,4 +35,21 @@
             </div>
         </div>
     </div>
+</div>
+<div class="contact-form-section">
+    <div class="contact-form-left">
+        <h2 class="contact-form-title-outline">Formular</h2>
+        <h2 class="contact-form-title-main">Solicita o oferta</h2>
+        <p class="contact-form-desc">
+            Oferim servicii profesionale de design interior adaptate nevoilor și stilului tău. Indiferent dacă este vorba despre amenajarea unui apartament, a unei case sau a unui spațiu comercial, ne ocupăm de fiecare etapă – de la concept și randări 3D până la implementare.
+            Completează formularul de mai jos pentru a primi o ofertă personalizată. 
+        </p>
+    </div>
+    <form class="contact-form-right">
+        <input type="email" placeholder="Email" class="contact-form-input" required />
+        <input type="tel" placeholder="Phone" class="contact-form-input" required />
+        <input type="text" placeholder="Name" class="contact-form-input" required />
+        <textarea placeholder="Message" class="contact-form-textarea" required></textarea>
+        <button type="submit" class="contact-form-submit">Trimite</button>
+    </form>
 </div>
