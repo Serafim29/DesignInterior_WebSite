@@ -4,5 +4,35 @@
 }
 @Html.Partial("_Header")
 
-<h2>Contacts</h2>
-
+<div class="contacts-hero">
+    <img src="@Url.Content("~/Content/Images/3.jpg")" alt="Contact Hero" class="contacts-hero-img">
+    <div class="contacts-hero-overlay"></div>
+    <h1 class="contacts-hero-title">Contacte</h1>
+    <div class="contacts-breadcrumb">
+        <a href="@Url.Action("Index","Home")">Acasa</a> /
+        <a href="@Url.Action("Contacts","Home")">Contacte</a>
+    </div>
+</div>
+<div class="contacts-content">
+    <div class="contact-info-row">
+        <div class="contact-info-box">
+            <img src="@Url.Content("~/Content/Images/telephone.png")" alt="Telefon" class="contact-info-icon" />
+            <div class="contact-info-label">Telefon:</div>
+            <a href="tel:+37360018337" class="contact-info-value">+373 60 018 337</a>
+        </div>
+        <div class="contact-info-box">
+            <img src="@Url.Content("~/Content/Images/advertising.png")" alt="Email" class="contact-info-icon"  />
+            <div class="contact-info-label">Email:</div>
+            <a href="mailto:contact@mgdesign.md" class="contact-info-value">contact@mgdesign.md</a>
+        </div>
+        <div class="contact-info-box">
+            <img src="@Url.Content("~/Content/Images/email.png")" alt="SocialMedia" class="contact-info-icon" />
+            <div class="contact-info-label">Social Media:</div>
+            <div class="contact-info-socials">
+                <a href="https://www.instagram.com/mg_interiordesigner/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="@("https://www.tiktok.com/@mihai_mg_design")" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/StudiodesigninteriorMG" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -99,16 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 function showCorrectNavbar() {
     var w = window.innerWidth;
-    document.querySelectorAll('.desktop-navbar, .tablet-navbar, .mobile-navbar').forEach(function(el) {
+    var navbars = document.querySelectorAll('.desktop-navbar, .tablet-navbar, .mobile-navbar');
+    navbars.forEach(function(el) {
         el.style.display = 'none';
+        el.classList.remove('navbar-animate');
     });
+    var toShow = [];
     if (w <= 767) {
-        document.querySelectorAll('.mobile-navbar').forEach(function(el) { el.style.display = 'block'; });
-    } else if (w <= 768 && w>=1023) {
-        document.querySelectorAll('.tablet-navbar').forEach(function(el) { el.style.display = 'block'; });
+        toShow = document.querySelectorAll('.mobile-navbar');
+    } else if (w > 767 && w <= 1023) {
+        toShow = document.querySelectorAll('.tablet-navbar');
     } else {
-        document.querySelectorAll('.desktop-navbar').forEach(function(el) { el.style.display = 'block'; });
+        toShow = document.querySelectorAll('.desktop-navbar');
     }
+    toShow.forEach(function(el) {
+        el.style.display = 'block';
+        void el.offsetWidth;
+        el.classList.add('navbar-animate');
+    });
 }
 window.addEventListener('DOMContentLoaded', showCorrectNavbar);
 window.addEventListener('resize', showCorrectNavbar);
