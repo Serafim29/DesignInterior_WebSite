@@ -460,6 +460,7 @@
     <Content Include="Content\Images\business-and-finance.png" />
     <Content Include="Content\Images\concept.png" />
     <Content Include="Content\Images\cube.png" />
+    <Content Include="Content\Images\edit.png" />
     <Content Include="Content\Images\email.png" />
     <Content Include="Content\Images\euro-currency-symbol.png" />
     <Content Include="Content\Images\euro.png" />
@@ -473,6 +474,8 @@
     <Content Include="Content\Images\telephone.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

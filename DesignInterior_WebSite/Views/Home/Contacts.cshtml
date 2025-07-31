@@ -36,20 +36,209 @@
         </div>
     </div>
 </div>
-<div class="contact-form-section">
+<div class="contact-form-section" id="contact-form-section">
     <div class="contact-form-left">
         <h2 class="contact-form-title-outline">Formular</h2>
         <h2 class="contact-form-title-main">Solicita o oferta</h2>
+        @if (!string.IsNullOrEmpty(ViewBag.SelectedPackage as string)) {
+            <div class="selected-package-modern">
+                <div class="package-card-selected">
+                    <div class="package-icon-selected">
+                        @if (ViewBag.SelectedPackage == "Express") {
+                            <img src="@Url.Content("~/Content/Images/speed.png")" alt="Express" />
+                        } else if (ViewBag.SelectedPackage == "Econom") {
+                            <img src="@Url.Content("~/Content/Images/business-and-finance.png")" alt="Econom" />
+                        } else if (ViewBag.SelectedPackage == "Standart") {
+                            <img src="@Url.Content("~/Content/Images/handshake.png")" alt="Standart" />
+                        } else if (ViewBag.SelectedPackage == "Exclusive") {
+                            <img src="@Url.Content("~/Content/Images/euro.png")" alt="Exclusive" />
+                        }
+                    </div>
+                    <div class="package-info-selected">
+                        <span class="package-label">Pachet ales:</span>
+                        <span class="package-name-selected">@ViewBag.SelectedPackage</span>
+                    </div>
+                    <button type="button" id="change-package-modern-btn" class="change-package-modern-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 2l-2 2m-2 2L7 17l-4 4 4-4L17 7l2-2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        }
+        
+        <div id="package-modal" class="package-modal" style="display:none;">
+            <div class="package-modal-content">
+                <div class="package-modal-header">
+                    <h3>Alege pachetul dorit</h3>
+                    <button type="button" id="close-package-modal" class="close-modal-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="package-grid-modal">
+                    <div class="package-option" data-package="Express">
+                        <div class="package-icon-modal">
+                            <img src="@Url.Content("~/Content/Images/speed.png")" alt="Express" />
+                        </div>
+                        <div class="package-details-modal">
+                            <h4>Express</h4>
+                            <p>Concept rapid și eficient</p>
+                        </div>
+                        <div class="package-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="package-option" data-package="Econom">
+                        <div class="package-icon-modal">
+                            <img src="@Url.Content("~/Content/Images/business-and-finance.png")" alt="Econom" />
+                        </div>
+                        <div class="package-details-modal">
+                            <h4>Econom</h4>
+                            <p>Plan complet 2D cu cost redus</p>
+                        </div>
+                        <div class="package-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="package-option" data-package="Standart">
+                        <div class="package-icon-modal">
+                            <img src="@Url.Content("~/Content/Images/handshake.png")" alt="Standart" />
+                        </div>
+                        <div class="package-details-modal">
+                            <h4>Standart</h4>
+                            <p>Echilibru perfect creație + tehnic</p>
+                        </div>
+                        <div class="package-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="package-option" data-package="Exclusive">
+                        <div class="package-icon-modal">
+                            <img src="@Url.Content("~/Content/Images/euro.png")" alt="Exclusive" />
+                        </div>
+                        <div class="package-details-modal">
+                            <h4>Exclusive</h4>
+                            <p>Asistență premium completă</p>
+                        </div>
+                        <div class="package-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <p class="contact-form-desc">
-            Oferim servicii profesionale de design interior adaptate nevoilor și stilului tău. Indiferent dacă este vorba despre amenajarea unui apartament, a unei case sau a unui spațiu comercial, ne ocupăm de fiecare etapă – de la concept și randări 3D până la implementare.
-            Completează formularul de mai jos pentru a primi o ofertă personalizată. 
+            @if (!string.IsNullOrEmpty(ViewBag.SelectedPackage as string)) {
+                <span>Pachet selectat: <strong>@ViewBag.SelectedPackage</strong></span>
+            } else {
+                <span>Oferim servicii profesionale de design interior adaptate nevoilor și stilului tău. Indiferent dacă este vorba despre amenajarea unui apartament, a unei case sau a unui spațiu comercial, ne ocupăm de fiecare etapă – de la concept și randări 3D până la implementare. Completează formularul de mai jos pentru a primi o ofertă personalizată.</span>
+            }
         </p>
     </div>
     <form class="contact-form-right">
-        <input type="email" placeholder="Email" class="contact-form-input" required />
+        <input type="hidden" name="SelectedPackage" id="SelectedPackageInput" value="@ViewBag.SelectedPackage" />
         <input type="tel" placeholder="Phone" class="contact-form-input" required />
         <input type="text" placeholder="Name" class="contact-form-input" required />
+        <label for="space-type-select">Tip spațiu:</label>
+        <select id="space-type-select" class="contact-form-input" required>
+            <option value="" disabled selected>Selectează tipul de spațiu</option>
+            <option value="Apartament">Apartament</option>
+            <option value="Birou">Birou</option>
+            <option value="Casa">Casă</option>
+            <option value="Spatiu comercial">Spațiu comercial</option>
+        </select>
+        <input type="email" placeholder="Email" class="contact-form-input" required />
         <textarea placeholder="Message" class="contact-form-textarea" required></textarea>
         <button type="submit" class="contact-form-submit">Trimite</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if(window.location.hash === '#contact-form-section') {
+            var formSection = document.getElementById('contact-form-section');
+            if(formSection) formSection.scrollIntoView({behavior: 'smooth'});
+        }
+        
+        let changeBtn = document.getElementById('change-package-modern-btn');
+        let modal = document.getElementById('package-modal');
+        let closeBtn = document.getElementById('close-package-modal');
+        let packageOptions = document.querySelectorAll('.package-option');
+        let selectedInput = document.getElementById('SelectedPackageInput');
+        
+        if(changeBtn) {
+            changeBtn.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        if(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        packageOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                packageOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                this.classList.add('selected');
+                
+                var packageName = this.getAttribute('data-package');
+                
+                selectedInput.value = packageName;
+                
+                var packageNameElement = document.querySelector('.package-name-selected');
+                var descElement = document.querySelector('.contact-form-desc strong');
+                
+                if(packageNameElement) packageNameElement.textContent = packageName;
+                if(descElement) descElement.textContent = packageName;
+                
+                var iconElement = document.querySelector('.package-icon-selected img');
+                if(iconElement) {
+                    var iconMap = {
+                        'Express': '/Content/Images/speed.png',
+                        'Econom': '/Content/Images/business-and-finance.png',
+                        'Standart': '/Content/Images/handshake.png',
+                        'Exclusive': '/Content/Images/euro.png'
+                    };
+                    iconElement.src = iconMap[packageName];
+                }
+                
+                setTimeout(function() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
+        });
+        
+        var currentPackage = selectedInput.value;
+        if(currentPackage) {
+            packageOptions.forEach(function(option) {
+                if(option.getAttribute('data-package') === currentPackage) {
+                    option.classList.add('selected');
+                }
+            });
+        }
+    });
+</script>

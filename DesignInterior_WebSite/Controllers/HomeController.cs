@@ -17,8 +17,9 @@ namespace DesignInterior_WebSite.Controllers
 
             return View();
         }
-        public ActionResult Contacts()
+        public ActionResult Contacts(string package = null)
         {
+            ViewBag.SelectedPackage = package;
             return View();
         }
         public ActionResult Portofolio()
